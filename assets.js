@@ -56,8 +56,7 @@ const structures = {
                 <p>
                     We are one family. <br>
                     Strong bonding, Cooperation, <br>
-                    learning new skills <br>
-                    are our key priority.
+                    Learning new skills are our key priority.
                 </p>
             </footer>
         </div>
