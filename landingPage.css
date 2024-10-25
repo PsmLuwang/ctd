@@ -1,4 +1,6 @@
 body {
+    position: relative;
+    min-height: 100dvh;
     background-color: #030712;
     width: 100dvw;
     max-width: 480px;
@@ -30,14 +32,14 @@ nav {
     padding-inline: 5px;
     height: 35px;
     border-radius: 5px;
-    border: 1px solid #6262f620;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #6262f620;
     background-color: #8585851d;
     backdrop-filter: blur(40px);
 }
-nav > button {
+.homeBtn, .taskBtn, .achievementBtn, .membersBtn {
     font-size: 0.8rem;
     /* width: 90px; */
     padding-inline: 15px;
@@ -47,16 +49,23 @@ nav > button {
     border: none;
     font-family: Arial, sans-serif;
 }
-#home {
+.activeNavBtn {
     /* background-color: #5350E3; */
     border-radius: 3px;
     background-image: linear-gradient(to top, #4d4aff, #7371fd);
 }
 
-header {
+
+
+
+
+
+
+/* start of home page */
+.homePage > header {
     text-align: center;
 }
-header > h3 > span, h5{
+.homePage > header > h3 > span, h5{
     color: #7C7AD1;
 }
 
@@ -76,8 +85,6 @@ header > h3 > span, h5{
     box-shadow: 0 0 10px 3px rgba(67, 89, 253, 0.189);
 }
 
-
-
 .ourGoal > h5 {
     border-bottom: 1px solid #7C7AD1;
     margin-inline: 35%;
@@ -95,7 +102,7 @@ header > h3 > span, h5{
     font-weight: 100;
 }
 
-footer {
+.homePage > footer {
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -103,7 +110,7 @@ footer {
     margin-inline: 15px;
     margin-bottom: 50px;
 }
-footer > div {
+.homePage > footer > div {
     border: 1px solid #6262f620;
     background-color: #8585851d;
     backdrop-filter: blur(40px);
@@ -116,14 +123,14 @@ footer > div {
     transition: scale 0.2s ease-in-out;
     /* padding-inline: 10px; */
 }
-footer > div:hover {
+.homePage > footer > div:hover {
     scale: 1.05;
 }
-footer > div > p {
+.homePage > footer > div > p {
     margin-inline: 7px;
     margin-top: 27px;
 }
-footer > div > img {
+.homePage > footer > div > img {
     height: 45px;
     width: 45px;
     object-fit: cover;
@@ -132,4 +139,87 @@ footer > div > img {
     top: -22.5px;
     left: calc(50% - 22.5px);
     box-shadow: 0 0 10px 3px rgba(184, 178, 246, 0.189);
+}
+/* end of home page */
+
+
+/* start of members page */
+.membersPage > header {
+    margin-top: 60px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+.membersPage > header > h3 > span {
+    color: #7C7AD1;
+}
+.membersPage > header > img {
+    height: 100px;
+}
+
+.join, .review, .membersComponent > button {
+    width: 84px;
+    height: 24px;
+    background-color: #cdcdcd32;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #6262f629;
+    font-size: 0.8rem;
+    margin-inline: 2px;
+}
+.join, .membersComponent > button {
+    background-image: linear-gradient(to top, #4d4aff, #7371fd);
+    border: none;
+}
+
+.membersWrapper {
+    text-align: left;
+    margin-inline: 20px;
+}
+.membersComponent {
+    border: 1px solid #6262f620;
+    background-color: #8585851d;
+    backdrop-filter: blur(40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    padding-block: 5px;
+    margin-bottom: 10px;
+}
+.membersComponent > div {
+    display: flex;
+    align-items: center;
+}
+.membersComponent > div > h3, .membersComponent > div > p {
+    margin-block: 5px;
+    margin-left: 10px;
+}
+.membersComponent > div > p {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.membersComponent > div > p > span {
+    color: #7C7AD1;
+    font-size: 0.7rem;
+}
+.membersComponent > button {
+    margin-right: 10px;
+    height: 30px;
+}
+
+
+.membersPage > footer {
+    background-color: #4d4aff;
+    border-radius: 30px 30px 0 0;
+    background-image: linear-gradient(to top, #2E2C7D, #5350E3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 10px 3px rgba(67, 89, 253, 0.189);
+}
+.membersPage > footer > p {
+    font-size: 0.8rem;
 }
