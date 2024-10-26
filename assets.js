@@ -76,6 +76,12 @@ const membersDetails = [
         position : 'Member',
         portfolio : '#'
     },
+    {
+        id : '03',
+        name : 'Kishan Meitei',
+        position : 'Member',
+        portfolio : '#'
+    },
 ];
 
 // course show in footer
