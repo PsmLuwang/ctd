@@ -70,6 +70,12 @@ const membersDetails = [
         position : 'Leader',
         portfolio : 'https://psmluwang.github.io/portfolio/'
     },
+    {
+        id : '02',
+        name : 'Salam Swamidutta Singh',
+        position : 'Member',
+        portfolio : '#'
+    },
 ];
 
 // course show in footer
