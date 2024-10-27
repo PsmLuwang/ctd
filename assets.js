@@ -80,7 +80,7 @@ const membersDetails = [
         id : '03',
         name : 'Kishan Meitei',
         position : 'Member',
-        portfolio : '#'
+        portfolio : 'https://kishanmeitei.github.io/portfolio/my-portfolio'
     },
 ];
 
