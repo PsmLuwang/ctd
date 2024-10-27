@@ -223,3 +223,228 @@ nav {
 .membersPage > footer > p {
     font-size: 0.8rem;
 }
+/* end of members page */
+
+
+
+/* start of task page */
+/* cube start */
+.taskPage > header {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+.box {
+    height: 80px;
+    width: 80px;
+    transform-style: preserve-3d;
+    /* transform: rotateY(130deg) rotateX(130deg); */
+    animation: animate 12s infinite;
+}
+@keyframes animate {
+    0% {
+        transform: rotateX(45deg) rotateY(-45deg);
+    }
+    25% {
+        transform: rotateX(-45deg) rotateY(-45deg);
+    }
+    50% {
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+    75% {
+        transform: rotateX(-45deg) rotateY(45deg);
+    }
+    100% {
+        transform: rotateX(45deg) rotateY(-45deg);
+    }
+}
+.box > img {
+    position: absolute;
+    height: 50px;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+}
+.card {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: radial-gradient(rgba(70, 124, 210, 0.117), rgba(0, 30, 77, 0.774));
+    border: 1px solid rgba(0, 0, 0, 0.43);
+    font-size: 1rem;
+    box-sizing: border-box; 
+    position: absolute;
+    transition: all 1s;
+}
+#front {
+    transform: translateZ(40px);
+}
+#back {
+    transform: translateZ(-40px);
+}
+#left {
+    right: 40px;
+    transform: rotateY(-90deg);
+}
+#right {
+    left: 40px;
+    transform: rotateY(90deg);
+}
+#top {
+    bottom: 40px;
+    transform: rotateX(90deg);
+}
+#bottom {
+    top: 40px;
+    transform: rotateX(-90deg);
+}
+.expand {
+    /* background-color: gray; */
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    position: absolute;
+    z-index: 1;
+}
+.expand:focus~ .box > #front {
+    transform: translateZ(60px) rotateY(360deg);
+}
+.expand:focus~ .box > #back {
+    transform: translateZ(-60px) rotateY(360deg);
+}
+.expand:focus~ .box > #left {
+    right: 60px;
+}
+.expand:focus~ .box > #right {
+    left: 60px;
+}
+.expand:focus~ .box > #top {
+    bottom: 60px;
+}
+.expand:focus~ .box > #bottom {
+    top: 60px;
+}
+/* cube end */
+
+
+.parent {
+    margin-top: 20px;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    background-color: #D1E1FA;
+    backdrop-filter: blur(40px);
+    border-radius: 24px 24px 0 0;
+    min-height: calc(100dvh - 255px);
+    position: relative;
+}
+.subNav {
+    margin-inline: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -27px;
+}
+.subNav > div {
+    width: 65px;
+    font-size: 0.8rem;
+    color: black;
+    font-weight: 100;
+}
+.subNav > div > button {
+    color: #180945;
+    height: 54px;
+    width: 54px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.25);
+}
+/* .subNav > div > button:focus {
+    background-color: #A7A6E0;
+} */
+/* temporary */
+#current {
+    background-color: #A7A6E0;
+}
+
+.taskListContainer {
+    margin-inline: 20px;
+    margin-block: 10px;
+}
+.taskListContainer > div {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+.taskThumbnail > img {
+    aspect-ratio: 6/4;
+    width: 100%;
+    object-fit: cover;
+}
+.taskThumbnail {
+    position: relative;
+}
+.taskThumbnail > div {
+    background-color: #c7c7c777;
+    box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 5%;
+    right: 5%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #040A1B;
+    padding: 10px;
+}
+
+.taskDetails {
+    aspect-ratio: 6/1;
+    background-color: #A7A6E0;
+    margin-top: -4px;
+    position: relative;
+}
+.taskDetails > div {
+    position: absolute;
+    background-color: #554979;
+    height: 28px;
+    width: 70px;
+    border-radius: 3px;
+    border: 1px solid #67607e;
+    right: 20px;
+    top: -14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.25);
+}
+.taskDetails > div > p {
+    margin: 0;
+    font-size: 0.7rem;
+}
+.taskDetails > p {
+    text-align: left;
+    margin: 0;
+    padding-block: 14px;
+    padding-inline: 20px;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.taskDetails > p > span {
+    color: #4E4E4E;
+}
