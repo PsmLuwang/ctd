@@ -32,6 +32,7 @@ const structures = {
         <div class="taskPage">
             <header>
                 <div class="expand" tabindex="0"></div>
+                <div class="background"></div>
                 <div class="box">
                     <img src="banner/codeToDestinyLight.png" alt="">
                     <div class="card" id="front"></div>
