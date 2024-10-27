@@ -43,9 +43,37 @@ const caseFunctions = {
 
     // go to task 
     task : function () {
-        console.log('task');
-        activeNavBtn('taskBtn')
+        // nav btn animation
+        activeNavBtn('taskBtn');
+
+        // insert html 
+        let wrapper = document.getElementById('wrapper');
+        wrapper.innerHTML = structures.taskHtml;
         
+        // listed the task 
+        let taskListContainer = document.getElementById('taskListContainer');
+        for (let i = 0; i < taskDetails.length; i++) {
+            taskListContainer.innerHTML += `
+                <div>
+                    <div class="taskThumbnail">
+                        <img src="task-img/${taskDetails[i].thumbnail}" alt="">
+                        <div>
+                            ${taskDetails[i].title}
+                        </div>
+                    </div>
+                    <div class="taskDetails">
+                        <div>
+                            <p>Details</p>
+                        </div>
+                        <p>
+                            <span>ID : ${taskDetails[i].id}</span> <br>
+                            Post : ${taskDetails[i].postDate} <br>
+                            Deadline : ${taskDetails[i].deadline}
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
     },
 
     // go to achievement 
@@ -97,4 +125,17 @@ function direction(page) {
         default:
     }
 }
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
