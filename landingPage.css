@@ -303,6 +303,15 @@ nav {
     top: 40px;
     transform: rotateX(-90deg);
 }
+.background {
+    background-color: rgba(99, 71, 163, 0.522);
+    filter: blur(50px);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    z-index: -1;
+}
 .expand {
     /* background-color: gray; */
     border-radius: 50%;
