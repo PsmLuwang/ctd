@@ -28,6 +28,56 @@ const structures = {
         </div>
     `,
 
+    taskHtml : `
+        <div class="taskPage">
+            <header>
+                <div class="expand" tabindex="0"></div>
+                <div class="box">
+                    <img src="banner/codeToDestinyLight.png" alt="">
+                    <div class="card" id="front"></div>
+                    <div class="card" id="back"></div>
+                    <div class="card" id="left"></div>
+                    <div class="card" id="right"></div>
+                    <div class="card" id="top"></div>
+                    <div class="card" id="bottom"></div>
+                </div>
+            </header>
+            
+            <section class="parent">
+                <div class="subNav">
+                    <div>
+                        <button>
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </button>
+                        <p>Recent</p>
+                    </div>
+                    <div>
+                        <button id="current">
+                            <i class="fa-solid fa-gears"></i>
+                        </button>
+                        <p>Current</p>
+                    </div>
+                    <div>
+                        <button>
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </button>
+                        <p>Upcoming</p>
+                    </div>
+                    <div>
+                        <button>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </button>
+                        <p>Completed</p>
+                    </div>
+                </div>
+
+                <div class="taskListContainer" id="taskListContainer">
+                    
+                </div>
+            </section>
+        </div>
+    `,
+
     membersHtml : `
         <div class="membersPage">
             <header class="membersHeader">
@@ -76,12 +126,6 @@ const membersDetails = [
         position : 'Member',
         portfolio : '#'
     },
-    {
-        id : '03',
-        name : 'Kishan Meitei',
-        position : 'Member',
-        portfolio : 'https://kishanmeitei.github.io/portfolio/my-portfolio'
-    },
 ];
 
 // course show in footer
@@ -108,6 +152,29 @@ const autoScrollImgList = [
     'banner/img5.jpg',
     'banner/img6.webp',
 ]
+
+
+// task details 
+const taskDetails = [
+    {
+        id : '01',
+        title : "Develop an Interactive Portfolio.",
+        postDate : "28th Oct 2024",
+        deadline : "31st Oct 2024",
+        thumbnail : "thumbnail01.jpeg",
+        description : '',
+        media : [],
+    },
+    {
+        id : '02',
+        title : "Complete HTML and CSS properties.",
+        postDate : "28th Oct 2024",
+        deadline : "3rd Nov 2024",
+        thumbnail : "thumbnail02.jpeg",
+        description : '',
+        media : [],
+    }
+];
 
 // nav btn animation
 function activeNavBtn(active) {
