@@ -133,6 +133,12 @@ const membersDetails = [
         position : 'Member',
         portfolio : 'https://kishanmeitei.github.io/portfolio/my-portfolio'
     },
+    {
+        id : '04',
+        name : 'Irom Deepakumar Singh',
+        position : 'Member',
+        portfolio : '#'
+    },
 ];
 
 // course show in footer
