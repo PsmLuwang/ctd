@@ -1,4 +1,4 @@
-// html structures 
+// html structures  
 const structures = {
     homeHtml : `
         <div class="homePage">
@@ -32,7 +32,7 @@ const structures = {
         <div class="taskPage">
             <header>
                 <div class="expand" tabindex="0"></div>
-                <!-- <div class="background"></div> -->
+                    <!-- <div class="background"></div> -->
                 <div class="box">
                     <img src="banner/codeToDestinyLight.png" alt="">
                     <div class="card" id="front"></div>
@@ -127,18 +127,6 @@ const membersDetails = [
         position : 'Member',
         portfolio : '#'
     },
-    {
-        id : '03',
-        name : 'Kishan Meitei',
-        position : 'Member',
-        portfolio : 'https://kishanmeitei.github.io/portfolio/my-portfolio'
-    },
-    {
-        id : '04',
-        name : 'Irom Deepakumar Singh',
-        position : 'Member',
-        portfolio : '#'
-    },
 ];
 
 // course show in footer
@@ -175,8 +163,16 @@ const taskDetails = [
         postDate : "28th Oct 2024",
         deadline : "31st Oct 2024",
         thumbnail : "thumbnail01.jpeg",
-        description : '',
-        media : [],
+        description : 'A portfolio is a compilation of academic and professional materials that exemplifies your beliefs, skills, qualifications, education, training, and experiences. It provides insight into your personality and work ethic. <br><br>Create your own design to develop your portfolio for yourself. The above photos are the examples of it. You can add additional information as well as you can add link of your social media accounts to understand more about you. <br><br> - Use HTML, CSS, Js (optional). <br> - Understand HTML structure. <br> - Gain more knowledge on CSS properties. <br></br>',
+        media : [
+            'task-img/thumbnail01.jpeg',
+            'task-img/portfolio02.png',
+            'task-img/portfolio03.png',
+            'task-img/portfolio04.jpg',
+            'task-img/portfolio05.png',
+            'task-img/portfolio06.jpg',
+            'task-img/portfolio07.png',
+        ],
     },
     {
         id : '02',
@@ -184,8 +180,14 @@ const taskDetails = [
         postDate : "28th Oct 2024",
         deadline : "3rd Nov 2024",
         thumbnail : "thumbnail02.jpeg",
-        description : '',
-        media : [],
+        description : 'To be a Master in HTML and CSS, research more on HTML tags and CSS properties. Develop a minimum of 2 or 3 static websites. <br><br># HTML (Hypertext Markup Language)<br>It is a standard markup language used to create web pages. It gives the structure and content of web pages. <br><br>Main HTML elements:<br> - Headings (h1-h6)<br>- Paragraphs (p)<br>- Links (a)<br>- Images (img)<br>- Lists (ul, ol, li)<br>- Tables (table, tr, td)<br>- Forms (form, input, textarea)<br>- Divisions (div, span)<br><br>CSS (Cascading Style Sheets)<br>It is a styling language used to control the layout and appearance of web pages written in HTML<br><br>Main CSS concepts:<br>- Selectors (e.g., .class, #id, tag)<br>- Properties (e.g., background-color, padding)<br>- Values (e.g., #fff, 16px)<br>- Box model (margin, border, padding, content)<br>- Layout (display, position, float)',
+        media : [
+            'task-img/thumbnail02.jpeg',
+            'task-img/html.png',
+            'task-img/html-tags.png',
+            'task-img/css.jpg',
+            'task-img/css2_cheat_sheet.jpg',
+        ],
     }
 ];
 
