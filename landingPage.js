@@ -43,7 +43,7 @@ const caseFunctions = {
 
     // go to task 
     task : function () {
-        // nav btn animation
+        // nav btn animation 
         activeNavBtn('taskBtn');
 
         // insert html 
@@ -62,7 +62,7 @@ const caseFunctions = {
                         </div>
                     </div>
                     <div class="taskDetails">
-                        <div>
+                        <div onclick="window.location.href='taskDetails.html?value=${i}'">
                             <p>Details</p>
                         </div>
                         <p>
