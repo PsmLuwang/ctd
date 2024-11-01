@@ -127,6 +127,18 @@ const membersDetails = [
         position : 'Member',
         portfolio : '#'
     },
+    {
+        id : '03',
+        name : 'Kishan Meitei',
+        position : 'Member',
+        portfolio : 'https://kishanmeitei.github.io/portfolio/my-portfolio'
+    },
+    {
+        id : '04',
+        name : 'Irom Deepakumar Singh',
+        position : 'Member',
+        portfolio : '#'
+    },
 ];
 
 // course show in footer
