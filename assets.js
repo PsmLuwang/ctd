@@ -139,6 +139,13 @@ const membersDetails = [
         position : 'Member',
         portfolio : '#'
     },
+    SHAMULAILATPAM DUDEJA SHARMA
+    {
+        id : '05',
+        name : 'Shamulailatpam Dudeja Sharma',
+        position : 'Member',
+        portfolio : '#'
+    },
 ];
 
 // course show in footer
