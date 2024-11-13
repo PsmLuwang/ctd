@@ -275,7 +275,7 @@ nav {
     justify-content: center;
     color: white;
     background: radial-gradient(rgba(119, 157, 217, 0.117), rgba(32, 61, 108, 0.774));
-/*     background: radial-gradient(rgba(70, 124, 210, 0.117), rgba(0, 30, 77, 0.774)); */
+    /* background: radial-gradient(rgba(70, 124, 210, 0.117), rgba(0, 30, 77, 0.774)); */
     border: 1px solid rgba(0, 0, 0, 0.43);
     font-size: 1rem;
     box-sizing: border-box; 
@@ -379,8 +379,8 @@ nav {
 /* .subNav > div > button:focus {
     background-color: #A7A6E0;
 } */
-/* temporary */
-#current {
+
+.activeStatusBtn {
     background-color: #A7A6E0;
 }
 
