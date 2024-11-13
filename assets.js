@@ -47,25 +47,25 @@ const structures = {
             <section class="parent">
                 <div class="subNav">
                     <div>
-                        <button>
+                        <button class='recent' onclick=taskStatus('recent')>
                             <i class="fa-solid fa-clock-rotate-left"></i>
                         </button>
                         <p>Recent</p>
                     </div>
                     <div>
-                        <button id="current">
+                        <button class='current' onclick=taskStatus('current')>
                             <i class="fa-solid fa-gears"></i>
                         </button>
                         <p>Current</p>
                     </div>
                     <div>
-                        <button>
+                        <button class='upcoming' onclick=taskStatus('upcoming')>
                             <i class="fa-solid fa-shield-halved"></i>
                         </button>
                         <p>Upcoming</p>
                     </div>
                     <div>
-                        <button>
+                        <button class='completed' onclick=taskStatus('completed')>
                             <i class="fa-solid fa-circle-check"></i>
                         </button>
                         <p>Completed</p>
@@ -178,8 +178,8 @@ const taskDetails = [
     {
         id : '01',
         title : "Develop an Interactive Portfolio.",
-        postDate : "28th Oct 2024",
-        deadline : "31st Oct 2024",
+        postDate : "28-10-2024",
+        deadline : "31-10-2024",
         thumbnail : "thumbnail01.jpeg",
         description : 'A portfolio is a compilation of academic and professional materials that exemplifies your beliefs, skills, qualifications, education, training, and experiences. It provides insight into your personality and work ethic. <br><br>Create your own design to develop your portfolio for yourself. The above photos are the examples of it. You can add additional information as well as you can add link of your social media accounts to understand more about you. <br><br> - Use HTML, CSS, Js (optional). <br> - Understand HTML structure. <br> - Gain more knowledge on CSS properties. <br></br>',
         media : [
@@ -195,8 +195,8 @@ const taskDetails = [
     {
         id : '02',
         title : "Complete HTML and CSS properties.",
-        postDate : "28th Oct 2024",
-        deadline : "3rd Nov 2024",
+        postDate : "28-10-2024",
+        deadline : "03-11-2024",
         thumbnail : "thumbnail02.jpeg",
         description : 'To be a Master in HTML and CSS, research more on HTML tags and CSS properties. Develop a minimum of 2 or 3 static websites. <br><br># HTML (Hypertext Markup Language)<br>It is a standard markup language used to create web pages. It gives the structure and content of web pages. <br><br>Main HTML elements:<br> - Headings (h1-h6)<br>- Paragraphs (p)<br>- Links (a)<br>- Images (img)<br>- Lists (ul, ol, li)<br>- Tables (table, tr, td)<br>- Forms (form, input, textarea)<br>- Divisions (div, span)<br><br>CSS (Cascading Style Sheets)<br>It is a styling language used to control the layout and appearance of web pages written in HTML<br><br>Main CSS concepts:<br>- Selectors (e.g., .class, #id, tag)<br>- Properties (e.g., background-color, padding)<br>- Values (e.g., #fff, 16px)<br>- Box model (margin, border, padding, content)<br>- Layout (display, position, float)',
         media : [
@@ -206,7 +206,34 @@ const taskDetails = [
             'task-img/css.jpg',
             'task-img/css2_cheat_sheet.jpg',
         ],
-    }
+    },
+    {
+        id : '03',
+        title : "Learning layout structure.",
+        postDate : "13-11-2024",
+        deadline : "17-11-2024",
+        thumbnail : "thumbnail03.png",
+        description : 'Develop the above page. And add the href link accourdingly. <br><br>Facebook : href="https://www.facebook.com/"<br>Instagram : href="https://www.instagram.com/"<br>X (Twitter) : href="https://twitter.com/"',
+        media : [
+            'task-img/thumbnail03.png',
+            'task-img/fb.png',
+            'task-img/ig.jpg',
+            'task-img/x.jpg',
+        ],
+    },
+    {
+        id : '04',
+        title : "Develop a Sign in page.",
+        postDate : "15-11-2024",
+        deadline : "19-11-2024",
+        thumbnail : "thumbnail04.png",
+        description : 'Use a form and put all the input elements inside the form. Focus on the layout. No need to add external links in any buttons or elements.',
+        media : [
+            'task-img/thumbnail04.png',
+            'task-img/fb.png',
+            'task-img/google.png',
+        ],
+    },
 ];
 
 // nav btn animation
@@ -217,4 +244,67 @@ function activeNavBtn(active) {
     document.querySelector(".membersBtn").classList.remove("activeNavBtn");
 
     document.querySelector(`.${active}`).classList.add("activeNavBtn");
+}
+
+function taskStatus(status) {
+    document.querySelector(".recent").classList.remove("activeStatusBtn");
+    document.querySelector(".current").classList.remove("activeStatusBtn");
+    document.querySelector(".upcoming").classList.remove("activeStatusBtn");
+    document.querySelector(".completed").classList.remove("activeStatusBtn");
+    document.querySelector(`.${status}`).classList.add("activeStatusBtn");
+
+    let taskListContainer = document.getElementById('taskListContainer');
+    taskListContainer.innerHTML = ``;
+    for (let i = 0; i < taskDetails.length; i++) {
+        const post = parseInt((taskDetails[i].postDate).split('-').reverse().join(''));
+        const dead = parseInt((taskDetails[i].deadline).split('-').reverse().join(''));
+        const currentDate = new Date();
+        const today = parseInt(`${currentDate.getFullYear()}${currentDate.getMonth() + 1}${currentDate.getDate()}`);
+        const taskChildHtml = `
+            <div>
+                <div class="taskThumbnail">
+                    <img src="task-img/${taskDetails[i].thumbnail}" alt="">
+                    <div>
+                        ${taskDetails[i].title}
+                    </div>
+                </div>
+                <div class="taskDetails">
+                    <div onclick="window.location.href='taskDetails.html?value=${i}'">
+                        <p>Details</p>
+                    </div>
+                    <p>
+                        <span>ID : ${taskDetails[i].id}</span> <br>
+                        Post : ${taskDetails[i].postDate} <br>
+                        Deadline : ${taskDetails[i].deadline}
+                    </p>
+                </div>
+            </div>
+        `;
+        
+        if (status == 'recent') {
+            if (post <= today && today <= dead && today-post <= 1) {
+                taskListContainer.innerHTML += taskChildHtml;
+            }
+        } else if (status == 'current') {
+            if (post <= today && today <= dead) {
+                taskListContainer.innerHTML += taskChildHtml;
+            }
+        } else if (status == 'upcoming') {
+            if (today < post) {
+                taskListContainer.innerHTML += taskChildHtml;
+            }
+        } else if (status == 'completed') {
+            if (dead < today) {
+                taskListContainer.innerHTML += taskChildHtml;
+            }
+        }
+    }
+
+    if (taskListContainer.innerHTML == ``) {
+        taskListContainer.innerHTML = `
+            <div>
+                <p style="color: black; margin-block: 100px">No tasks to show &#129300</p>
+            </div>
+        `;
+    }
 }
