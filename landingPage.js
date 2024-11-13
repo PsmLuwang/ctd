@@ -50,30 +50,8 @@ const caseFunctions = {
         let wrapper = document.getElementById('wrapper');
         wrapper.innerHTML = structures.taskHtml;
         
-        // listed the task 
-        let taskListContainer = document.getElementById('taskListContainer');
-        for (let i = 0; i < taskDetails.length; i++) {
-            taskListContainer.innerHTML += `
-                <div>
-                    <div class="taskThumbnail">
-                        <img src="task-img/${taskDetails[i].thumbnail}" alt="">
-                        <div>
-                            ${taskDetails[i].title}
-                        </div>
-                    </div>
-                    <div class="taskDetails">
-                        <div onclick="window.location.href='taskDetails.html?value=${i}'">
-                            <p>Details</p>
-                        </div>
-                        <p>
-                            <span>ID : ${taskDetails[i].id}</span> <br>
-                            Post : ${taskDetails[i].postDate} <br>
-                            Deadline : ${taskDetails[i].deadline}
-                        </p>
-                    </div>
-                </div>
-            `;
-        }
+        // listing the task 
+        taskStatus('current');
     },
 
     // go to achievement 
@@ -107,7 +85,7 @@ const caseFunctions = {
     },
 }
 
-direction('home');
+direction('task');
 function direction(page) {
     switch (page) {
         case 'home':
